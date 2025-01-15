@@ -3,26 +3,26 @@ import java.util.Scanner;
 public class Dev1 {
 
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);  // Create a scanner object for input
+    Scanner scanner = new Scanner(System.in);  
     String[][] adherents = {
-            {"2023", "4", "Dany Boon"},
-            {"2022", "12", "Omar sy"},
-            {"2023", "11", "Killan Mbappe"},
-            {"2023", "2", "Olivier Giroud"},
-            {"2023", "8", "Antoine Griezmann"},
-            {"2022", "6", "Zinedine Zidane"},
-            {"2021", "5", "Jean Dujardin"}
+            {"2025", "4", "Dany Boon"},
+            {"2024", "12", "Omar sy"},
+            {"2024", "11", "Killan Mbappe"},
+            {"2025", "2", "Olivier Giroud"},
+            {"2025", "8", "Antoine Griezmann"},
+            {"2024", "6", "Zinedine Zidane"},
+            {"2024", "5", "Jean Dujardin"}
     };
 
-    System.out.println(adherents[2][1]); // [ligne][colonne]
+    //System.out.println(adherents[2][1]); // verrifier [ligne][colonne]
     
     int mois;
     System.out.println("Entrez le mois courant");
-    mois = scanner.nextInt();  // Replace MOOC.readInt() with scanner.nextInt()
+    mois = scanner.nextInt();  
     
     int anneeEnCours;
     System.out.println("Entrez l'année courante");
-    anneeEnCours = scanner.nextInt();  // Replace MOOC.readInt() with scanner.nextInt()
+    anneeEnCours = scanner.nextInt();  
 
     while (true) {
     int choix;
@@ -32,12 +32,12 @@ public class Dev1 {
     System.out.println("4-Ajouter ou Renouveler un adhérent");
     System.out.println("5-Quitter");
     System.out.print("Votre choix: ");
-    choix = scanner.nextInt();  // Replace MOOC.readInt() with scanner.nextInt()
+    choix = scanner.nextInt();  
     
     while (choix < 1 || choix > 5) {
         System.out.print("Choix incorrect. ");
         System.out.print("Votre choix: ");
-        choix = scanner.nextInt();  // Replace MOOC.readInt() with scanner.nextInt()
+        choix = scanner.nextInt();  
     }
 
     if (choix == 1) {
@@ -48,7 +48,7 @@ public class Dev1 {
         afficherAdherentsEchue(adherents, anneeEnCours);
     } else if (choix == 4) {
         System.out.println("Donner le prénom suivi du nom: ");
-        scanner.nextLine();  // Consume the leftover newline character
+        scanner.nextLine();  
         adherents = ajouteradherents(adherents, mois, anneeEnCours, scanner);
         System.out.println("\nTableau après ajout de l'adhérent");
         afficherTableau(adherents);
@@ -68,12 +68,12 @@ public class Dev1 {
 
   public static String[][] ajouteradherents(String[][] adherents, int mois, int anneeEnCours, Scanner scanner) {
     System.out.println("Ajouter un nouvel adhérent");
-    String nouvelleLigneInput = scanner.nextLine();  // Read the input using scanner
+    String nouvelleLigneInput = scanner.nextLine();  
     String[] elementsNouvelleLigne = nouvelleLigneInput.split(" ");
     
     while (elementsNouvelleLigne.length != 2) {
         System.out.println("Donner seulement le nom et le prénom (exemple: Jean Dupond) : ");
-        nouvelleLigneInput = scanner.nextLine();  // Read again if the input is incorrect
+        nouvelleLigneInput = scanner.nextLine();  
         elementsNouvelleLigne = nouvelleLigneInput.split(" ");
     }
     
@@ -127,3 +127,4 @@ public class Dev1 {
   }
  
 }
+
